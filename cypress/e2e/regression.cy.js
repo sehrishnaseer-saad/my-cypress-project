@@ -6,3 +6,4 @@ describe('File Upload', () => {
         cy.get('#uploaded-files').should('contain.text', 'testFile.png');
     });
 });
+// this is the comments
