@@ -1,5 +1,6 @@
-const { addCompareSnapshotCommand } = require('cypress-visual-regression/dist/command');
-addCompareSnapshotCommand();
+// cypress/support/e2e.js
+import './commands';    // ensure this file imports cypress-file-upload
+
 
 
 
