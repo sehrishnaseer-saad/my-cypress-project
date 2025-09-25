@@ -18,9 +18,13 @@ describe('signup', () => {
       cy.get('#first_name').type('John');
        //enter last name
        cy.get('#last_name').type('doe');
-       //click join
-       cy.get('button.btn-primary.width_login').should('have,join').click();
-    })
-})
+      // Verify Join button exists and click it
+      cy.get("button.btn-primary.width_login")
+        .should("be.visible")
+        .and("contain.text", "Join")
+        .click();
 
+
+    });
+});
 
