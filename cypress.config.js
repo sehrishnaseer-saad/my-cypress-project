@@ -1,23 +1,40 @@
+// cypress.config.js
 const { defineConfig } = require("cypress");
 const { configureVisualRegression } = require("cypress-visual-regression");
+const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
 const fs = require("fs");
 
 module.exports = defineConfig({
     e2e: {
         setupNodeEvents(on, config) {
-            // 🔹 Visual Regression plugin
+            // Mochawesome reporter
+            require("cypress-mochawesome-reporter/plugin")(on);
+
+            // Visual Regression
             configureVisualRegression(on);
 
-            // 🔹 File saving task (Node context)
+            // Tasks (downloads, saving files, etc.)
             on("task", {
+                downloadFile,
                 saveBase64File({ fileName, base64String }) {
-                    fs.writeFileSync(fileName, Buffer.from(base64String, "base64"));
+                    fs.writeFileSync(fileName, base64String, "base64");
                     return null;
                 },
             });
 
             return config;
         },
+
+        // Reporter settings
+        reporter: "cypress-mochawesome-reporter",
+        reporterOptions: {
+            reportDir: "cypress/reports",
+            overwrite: false,
+            html: true,
+            json: true,
+            charts: true,
+        },
+
         env: {
             visualRegressionType: "base",
         },

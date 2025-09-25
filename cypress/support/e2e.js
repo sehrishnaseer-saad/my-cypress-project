@@ -1,10 +1,10 @@
 // cypress/support/e2e.js
-import './commands';    // ensure this file imports cypress-file-upload
-// For file download
-require('cypress-downloadfile/lib/downloadFileCommand');
 
+// Import your custom commands
+import './commands';
 
-
+// Mochawesome reporter
+import 'cypress-mochawesome-reporter/register';
 
 
 

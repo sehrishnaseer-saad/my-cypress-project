@@ -1,22 +1,23 @@
+// cypress/e2e/download.cy.js
 describe("Download Techsila Logo", () => {
-    it("should download the Base64 logo", () => {
+    it("downloads Techsila logo", () => {
         cy.visit("https://techsila.io");
 
         cy.get("img[alt='logo']")
             .invoke("attr", "src")
-            .then((src) => {
-                if (src.startsWith("data:image")) {
-                    const base64String = src.split(",")[1];
-                    cy.task("saveBase64File", {
-                        fileName: "cypress/downloads/techsila-logo.webp",
-                        base64String,
-                    });
-                } else {
-                    throw new Error("❌ Logo is not Base64 encoded");
-                }
+            .then((logoUrl) => {
+                const finalUrl = logoUrl.startsWith("http")
+                    ? logoUrl
+                    : `https://techsila.io${logoUrl}`;
+
+                // ✅ Use plugin
+                cy.downloadFile(finalUrl, "cypress/downloads", "techsila-logo.webp");
             });
+
+        cy.readFile("cypress/downloads/techsila-logo.webp", "binary", {
+            timeout: 15000,
+        }).should((file) => {
+            expect(file.length).to.be.greaterThan(100);
+        });
     });
 });
-
-
-
