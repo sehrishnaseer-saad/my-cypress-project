@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-09-24T07:19:05.054Z",
+    "end": "2025-09-24T07:19:05.360Z",
+    "duration": 306,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "e16f1fc4-78cb-463d-bd02-4f9ef14c7bde",
+      "title": "",
+      "fullFile": "cypress\\e2e\\visual.cy.js",
+      "file": "cypress\\e2e\\visual.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "758a875b-b081-4ee4-bb1f-79e9f95202c0",
+          "title": "Visual Regression Example",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Homepage snapshot",
+              "fullTitle": "Visual Regression Example Homepage snapshot",
+              "timedOut": null,
+              "duration": 228,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\visual.cy.js\\\\Visual Regression Example -- Homepage snapshot (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://tazofoods.com\");\ncy.compareSnapshot(\"homepage\", {\n  errorThreshold: 0.1\n});\n// 0.1 = allow 10% pixel diff tolerance",
+              "err": {
+                "message": "TypeError: cy.compareSnapshot is not a function",
+                "estack": "TypeError: cy.compareSnapshot is not a function\n    at Context.eval (webpack://my-cypress-project/./cypress/e2e/visual.cy.js:4:11)\n    at runnable.fn (http://localhost:52593/__cypress/runner/cypress_runner.js:141938:19)\n    at callFn (http://localhost:52593/__cypress/runner/cypress_runner.js:161016:21)\n    at Runnable.run (http://localhost:52593/__cypress/runner/cypress_runner.js:161003:7)\n    at <unknown> (http://localhost:52593/__cypress/runner/cypress_runner.js:167096:30)\n    at PassThroughHandlerContext.finallyHandler (http://localhost:52593/__cypress/runner/cypress_runner.js:4042:23)\n    at PassThroughHandlerContext.tryCatcher (http://localhost:52593/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (http://localhost:52593/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (http://localhost:52593/__cypress/runner/cypress_runner.js:1546:18)",
+                "diff": null
+              },
+              "uuid": "3cd01759-1bba-4d1f-bb79-9d4d73b7e8fd",
+              "parentUUID": "758a875b-b081-4ee4-bb1f-79e9f95202c0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "3cd01759-1bba-4d1f-bb79-9d4d73b7e8fd"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 228,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}

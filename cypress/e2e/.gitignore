@@ -9,6 +9,16 @@ build/
 cypress/screenshots/
 cypress/videos/
 cypress/snapshots/actual/
+# Ignore mochawesome intermediate JSONs & screenshots
+cypress/reports/**/*.json
+cypress/reports/**/*.xml
+cypress/reports/**/*.png
+cypress/reports/.jsons/
+
+# Keep only final HTML + assets
+!cypress/reports/mochawesome/index.html
+!cypress/reports/mochawesome/assets/**
+
 
 # Logs
 npm-debug.log*
