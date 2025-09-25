@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-09-24T07:17:07.008Z",
+    "end": "2025-09-24T07:17:20.226Z",
+    "duration": 13218,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cdaee339-6825-4474-8be4-1d539738afbc",
+      "title": "",
+      "fullFile": "cypress\\e2e\\signup.cy.js",
+      "file": "cypress\\e2e\\signup.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "465ab917-f81b-40f6-8157-4e14b576d757",
+          "title": "signup",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "verify student can signup",
+              "fullTitle": "signup verify student can signup",
+              "timedOut": null,
+              "duration": 10387,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\signup.cy.js\\\\signup -- verify student can signup (failed).png\"\n    ]\n  ]\n}",
+              "code": "//enter web page\ncy.visit('https://int.ilmzone.com');\ncy.wait(5000);\n//click on join button\ncy.get('#signup').click();\n//click on student\ncy.get('label[for=\"Student\"]').click();\n//click on continue with google\ncy.get('button.signup-btn').click();\ncy.get('label[for=\"Student\"]').click;\n//enter email\ncy.get('#email').type('sweetawan22@mailinator.com').should('be.visible').click();\n//enter password\ncy.get('#password').type('R@fayzara123');\n//enter firstname\ncy.get('#first_name').type('John');\n//enter last name\ncy.get('#last_name').type('doe');\n//click join\ncy.get('button.btn-primary.width_login').should('have,join').click();",
+              "err": {
+                "message": "CypressError: The chainer `have,join` was not found. Could not build assertion.",
+                "estack": "CypressError: The chainer `have,join` was not found. Could not build assertion.\n    at cypressErr (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:77648:18)\n    at Object.cypressErrByPath (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:77653:10)\n    at <unknown> (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:120608:78)\n    at arrayReduce (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:18675:21)\n    at Function.reduce (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:27727:14)\n    at applyChainers (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:120606:68)\n    at tryCatcher (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.shouldFn (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:120632:66)\n    at Context.should (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:120649:23)\n    at <unknown> (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:146597:39)\n    at assertions (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:146845:16)\n    at tryCatcher (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://int.ilmzone.com/__cypress/runner/cypress_runner.js:2386:5)\nFrom Your Spec Code:\n    at Context.eval (webpack://my-cypress-project/./cypress/e2e/signup.cy.js:22:48)",
+                "diff": null
+              },
+              "uuid": "4d3617a5-9f46-4a41-be75-648383deaaaa",
+              "parentUUID": "465ab917-f81b-40f6-8157-4e14b576d757",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "4d3617a5-9f46-4a41-be75-648383deaaaa"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 10387,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
