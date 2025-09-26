@@ -1,10 +1,10 @@
-// cypress.config.js
 const { defineConfig } = require("cypress");
 const { configureVisualRegression } = require("cypress-visual-regression");
 const { downloadFile } = require("cypress-downloadfile/lib/addPlugin");
 const fs = require("fs");
 
 module.exports = defineConfig({
+    projectId: '7kwdbw',
     e2e: {
         setupNodeEvents(on, config) {
             // Mochawesome reporter
@@ -39,5 +39,8 @@ module.exports = defineConfig({
             visualRegressionType: "base",
         },
         screenshotsFolder: "cypress/snapshots/actual",
+
+        // 🔹 Add this once your project is linked in Cypress Cloud
+        projectId: 'k6e5es',
     },
 });
