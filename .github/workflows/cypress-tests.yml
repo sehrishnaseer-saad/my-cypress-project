@@ -29,4 +29,4 @@ jobs:
           start: npm start --if-present
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 60 # seconds
-          command: npx cypress run
+          command: npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
